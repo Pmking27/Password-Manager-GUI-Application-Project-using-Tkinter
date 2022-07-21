@@ -49,6 +49,9 @@ def save():
 
             else:
                 data.update(new_data)
+                with open("data.json", "w") as data_file:
+                    #Saving updated data
+                    json.dump(data, data_file, indent=4)
             finally:    
                 website.delete(0,END)
                 password.delete(0,END)   
